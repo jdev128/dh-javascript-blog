@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Personal Blog</title>
+		<link rel="stylesheet" href="style.css" />
+		<script type="module" src="script.js"></script>
+		<link
+			rel="shortcut icon"
+			href="assets/favicon.ico"
+			type="image/x-icon"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<img
+					src="assets/icons8-app-icon-96.png"
+					id="app-icon"
+					alt="My Personal Blog"
+				/>
+			</nav>
+		</header>
+		<main>
+			<section id="new-post">
+				<form id="new-post">
+					<textarea
+						name="description"
+						id="description"
+						rows="6"
+						placeholder="Cuentale al mundo en que estás pensando..."
+						required
+					></textarea>
+					<input
+						name="title"
+						id="title"
+						type="text"
+						placeholder="Ahora ponle un título memorable..."
+						required
+					/>
+					<button type="submit">Publicar</button>
+				</form>
+			</section>
+			<section id="previous-posts">
+				<header>
+					<h2>Tus publicaciones recientes</h2>
+				</header>
+				<p class="informational-legend">
+					<i class="bx bxs-info-circle"></i>Esta aplicación aún se
+					encuentra en construcción: cualquier modificación que
+					realices se perderá si refrescas o abandonas la página.
+				</p>
+				<ul></ul>
+			</section>
+		</main>
+		<dialog id="edit-post">
+			<header>
+				<h3 id="dialog-title">Editar</h3>
+				<button class="simple-button" id="dialog-closer">
+					<i class="bx bxs-x-circle"></i>
+				</button>
+			</header>
+			<main>
+				<form id="edit-form">
+					<input
+						type="hidden"
+						id="edited-id"
+						name="edited-id"
+						required
+					/>
+					<label for="edited-title">Titulo</label>
+					<input
+						name="edited-title"
+						id="edited-title"
+						type="text"
+						placeholder="Tu título memorable..."
+						required
+					/>
+					<label for="edited-description">Descripción</label>
+					<textarea
+						name="edited-description"
+						id="edited-description"
+						rows="6"
+						placeholder="Cuentale al mundo en que estás pensando..."
+						required
+					></textarea>
+				</form>
+			</main>
+			<footer>
+				<button form="edit-form" type="reset" class="secondary-button">
+					Cancelar
+				</button>
+				<button form="edit-form" type="submit" class="secondary-button">
+					Guardar
+				</button>
+			</footer>
+		</dialog>
+	</body>
+</html>

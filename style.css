@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700;900&display=swap");
+
+:root {
+    --main-color: #001524;
+    --background-color: #f5fffa;
+    --text-color: #191919;
+    --focus-color: #f18227;
+    color: var(--text-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+nav {
+    background-color: var(--main-color);
+    padding: 15px 5vw;
+}
+
+#app-icon {
+    height: 50px;
+}
+
+main {
+    padding: 15px 5vw;
+}
+
+input, textarea, button {
+    caret-color: var(--focus-color);
+    min-height: 40px;
+    padding: 15px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--focus-color);
+    outline: 1px solid var(--focus-color);
+}
+
+::placeholder {
+    color: rgba(from var(--main-color) r g b / 0.6);
+    font-size: 0.9rem;
+}
+
+input, textarea {
+    border: 1px solid var(--main-color);
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+button:not(.simple-button):hover {
+    filter: saturate(300%);
+    transform: scale(1.05);
+}
+
+.secondary-button {
+    color: var(--main-color);
+    background-color: transparent;
+    border: 1px solid currentColor;
+    box-shadow: none;
+    width: initial;
+}
+
+.secondary-button i.bx {
+    color: currentColor;
+}
+
+.secondary-button:hover {
+    color: var(--focus-color);
+}
+
+.simple-button {
+    border: none;
+    box-shadow: none;
+    width: initial;
+}
+
+label {
+    display: block;
+}
+
+input:not(:last-child),
+textarea:not(:last-child),
+label:not(:last-child),
+#previous-posts :not(:last-child) {
+    margin-bottom: 15px;
+}
+
+nav, button {
+    box-shadow: 0 3px 10px rgba(from var(--main-color) r g b / 0.8);
+}
+
+#previous-posts {
+    padding-top: 15px;
+}
+
+#previous-posts ul {
+    list-style: none;
+}
+
+.post {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 15px;
+    align-items: center;
+    background-color: hsl(from var(--background-color) h 200 l);
+    font-size: 0.9em;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.post .data {
+    margin-bottom: 0;
+}
+
+.post .actions button {
+    display: block;
+}
+
+.post .title {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.informational-legend {
+    border: 1px solid var(--focus-color);
+    background-color: hsl(from var(--focus-color) h s 100);
+    border-radius: 3px;
+    padding: 15px;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.informational-legend i.bx {
+    color: var(--focus-color);
+    padding-right: 1vh;
+}
+
+/* Dialog Styles */
+
+::backdrop {
+    background-color: rgba(from var(--text-color) r g b / 0.7);
+/*     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(1px); */
+}
+
+dialog {
+    margin: 10vh auto 0;
+    outline: none;
+    width: 70vmax;
+    height: 80vh;
+    border: none;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--text-color);
+}
+
+dialog header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+    background-color: var(--main-color);
+    color: white;
+}
+
+#dialog-title {
+    margin-bottom: 0;
+    padding: 15px;
+}
+
+#dialog-closer {
+    font-size: 1.2em;
+}
+
+dialog main {
+    height: calc(100% - 60px - 85px);
+    overflow-x: auto;
+}
+
+dialog footer {
+    display: flex;
+    padding: 15px;
+    min-height: 85px;
+    align-items: center;
+    width: 100%;
+    justify-content: end;
+    background-color: var(--background-color);
+    position: absolute;
+    bottom: 0;
+}
+
+dialog footer :not(:last-child) {
+    margin-right: 15px;
+}
